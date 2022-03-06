@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', {title:"Productos"}) %>
+<body>
+    
+    <a class="subir" id="subir"><img src="../img/volver.png" alt=""></a>
+
+
+    <div class="banner">
+        <img src="../img/banner_listado.png" alt="funko pop">
+    </div>
+
+    <div class="header">
+        <ul class="header-ul">
+            <li><a class="text text-a" href="#">Inicio</a></li>
+            <p class="text">/</p>
+            <li><a class="text text-a" href="##">Juguetes</a></li>
+            <p class="text">/</p>
+            <li><a class="text text-a" href="###">Funko Pop</a></li>
+        </ul>
+
+        <div class="conteiner-btn">
+        <button class="btn-filtro">Filtrar <img src="/img/Vector.png" alt=""></button>
+        <div class="list">
+            <button class="link">Opcion 1</button>
+            <button class="link">Opcion 2</button>
+            <button class="link">Opcion 3</button>
+        </div>
+        </div>
+
+        <div class="conteiner-btn">
+        <button class="btn-ordenar">Ordenar por<img src="/img/Vector.png" alt=""></button>
+        <div class="list">
+            <button class="link">Opcion 1</button>
+            <button class="link">Opcion 2</button>
+            <button class="link">Opcion 3</button>
+        </div>
+        </div>
+
+    </div>
+    
+    <div class="producto-item-padre">
+    <% for( let i = 0; i < producto.data.funkopops.length; i++ ) { %>
+    <div class="producto-item">
+        <img class="img-item" src="<%=producto.data.funkopops[i].image%>" alt="Funko POP">
+        <div class="precio-item">
+            <div class="data">
+                <p class="data-marca">Funko</p>
+                <p class="data-nombre"><%=producto.data.funkopops[i].name%></p>
+            </div>
+
+            <div class="data-precio">
+                <p class="data-cuotas">6 cuotas s/interés de</p>
+                <% const cuota = producto.data.funkopops[i].price /6%> 
+                <p class="data-cuota">$<%=cuota%></p>
+                <div>
+                <p class="data-final">Final: <span>$<%=producto.data.funkopops[i].price%></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-carrito">
+        <a class="carrito-inside" href=""><img src="../img/carrito.png" alt=""></a>
+        </div>
+    </div>
+    <% } %> 
+    </div>
+    
+    <div class="paginacion">
+        <div class="fle">
+        <a class="fleI" href="?page=<%=producto.data.page - 1%>"><img src="/img/flep.png" alt="flecha-derecha"></a>
+        </div>
+        <% for( let i = 0; i < producto.data.totalPages; i++ ) { %>
+        <a class="numP" href="?page=<%=[i + 1]%>"><%=[i + 1]%> </a>
+        <% } %>
+        <div class="fle">
+        <a class="fleD" href="?page=<%=producto.data.page + 1%>"><img src="/img/fleD.png" alt="flecha-izquierda"></a>
+        </div>
+    </div>
+    <script src="js/dinamismo.js"></script>
+</body>
+
+</html>
