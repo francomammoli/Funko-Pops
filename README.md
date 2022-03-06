@@ -24,11 +24,25 @@
 - CSS
 - EJS
 
->Back end <br>
+>Back end 
 - nodejs
 - express
 - sequelize
 - mysql
+
+## RUTAS API
+
+- Traer datos de la base de datos (http://localhost:3003/api/productos)
+- Agregar producto (http://localhost:3003/api/producto/add)
+- Editar producto (http://localhost:3003/api/producto/edit/:id)
+- Eliminar producto (http://localhost:3003/api/producto/delete/:id)
+
+## RUTAS WEB
+
+- Pagina principal (http://localhost:3000/listado)
+- Pagina listado de productos (http://localhost:3000/producto)
+- Formulario agregar producto (http://localhost:3000/formulario)
+- Formulario editar producto (http://localhost:3000/formularioedit/:id)
 
 ## Install
 
